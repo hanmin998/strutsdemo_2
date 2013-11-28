@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN" 
+		"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+	<validators>
+		<field name="UserName">
+			<field-validator type="requiredstring" short-circuit="true">
+				<param name="trim">true</param>
+				<message>账号不能为空</message>
+			</field-validator>
+			<field-validator type="stringlength">
+				<param name="minLength">3</param>
+				<param name="maxLength">20</param>
+				<message>账号长度应该在${minLength}~${maxLength}之间</message>
+			</field-validator>
+		</field>
+		<field name="UserPwd">
+			<field-validator type="requiredstring" short-circuit="true">
+				<param name="trim">true</param>
+				<message>密码不能为空</message>
+			</field-validator>
+			<field-validator type="stringlength">
+				<param name="minLength">3</param>
+				<param name="maxLength">20</param>
+				<message>密码长度应该在${minLength}~${maxLength}之间</message>
+			</field-validator>
+		</field>
+		<field name="ReUserPwd">
+			<field-validator type="requiredstring" short-circuit="true">
+				<param name="trim">true</param>
+				<message>重复密码不能为空</message>
+			</field-validator>
+		</field>
+		<field name="UserEmail">
+			<field-validator type="requiredstring" short-circuit="true">
+				<param name="trim">true</param>
+				<message>邮箱不能为空</message>
+			</field-validator>
+			<field-validator type="email">
+				<message>邮箱输入不正确</message>
+			</field-validator>
+		</field>
+		<field name="validate">
+			<field-validator type="requiredstring">
+				<param name="trim">true</param>
+				<message>验证码不能为空</message>
+			</field-validator>
+		</field>
+	</validators>
